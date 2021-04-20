@@ -9,7 +9,15 @@
 
         public override void Validade()
         {
-            throw new System.NotImplementedException();
+            LimparMensagensValidacao();
+
+            if(string.IsNullOrEmpty(Nome))
+                AdicionarMensagem("Campo obrigatorio - Nome não pode ficar vazio");
+            if (string.IsNullOrEmpty(Descricao))
+                AdicionarMensagem("Campo obrigatorio - Descrição não pode ficar vazio");
+            if (Preco.Equals(0))
+                AdicionarMensagem("Campo Obrigatorio - Preço não pode ficar com valor zero");
+
         }
     }
 }

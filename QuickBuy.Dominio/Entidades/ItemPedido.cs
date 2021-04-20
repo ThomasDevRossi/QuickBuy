@@ -8,7 +8,12 @@
 
         public override void Validade()
         {
-            throw new System.NotImplementedException();
+            LimparMensagensValidacao();
+
+            if(ProdutoId.Equals(0))
+                AdicionarMensagem("Campo obrigatorio - É preciso haver pelo menos um produto");
+            if (Quantidade.Equals(0))
+                AdicionarMensagem("Campo obrigatorio - É preciso haver pelo menos uma quantidade");
         }
     }
 }

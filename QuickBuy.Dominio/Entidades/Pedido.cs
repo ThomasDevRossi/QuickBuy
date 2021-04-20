@@ -30,9 +30,19 @@ namespace QuickBuy.Dominio.Entidades
             LimparMensagensValidacao();
 
             if (!ItensPedido.Any())
-                AdicionarMensagem("Preenchimento Obrigatorio - Item de Pedido não pode ficar vazio");
+                AdicionarMensagem("Campo obrigatorio - Item de Pedido não pode ficar vazio");
             if (string.IsNullOrEmpty(CEP))
-                AdicionarMensagem("Preenchimento Obrigatorio - CEP");
+                AdicionarMensagem("Campo obrigatorio - CEP");
+            if (string.IsNullOrEmpty(Estado))
+                AdicionarMensagem("Campo obrigatorio - Estado");
+            if (string.IsNullOrEmpty(Cidade))
+                AdicionarMensagem("Campo obrigatorio - Cidade");
+            if (NumeroEndereco.Equals(0))
+                AdicionarMensagem("Campo obrigatorio - Numero do Endereço");
+            if (string.IsNullOrEmpty(EnderecoCompleto))
+                AdicionarMensagem("Campos obrigatorios - Endereço Completo");
+            if (FormaPagamento.Equals(0))
+                AdicionarMensagem("Campo obrigatorio - Forma de Pagamento");
         }
     }
 }

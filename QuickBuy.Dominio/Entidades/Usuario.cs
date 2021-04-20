@@ -17,7 +17,16 @@ namespace QuickBuy.Dominio.Entidades
 
         public override void Validade()
         {
-            throw new System.NotImplementedException();
+            LimparMensagensValidacao();
+
+            if (string.IsNullOrEmpty(Email))
+                AdicionarMensagem("Campo obrigatorio - E-mail");
+            if (string.IsNullOrEmpty(Senha))
+                AdicionarMensagem("Campo obrigatorio - Senha");
+            if (string.IsNullOrEmpty(Nome))
+                AdicionarMensagem("Campo obrigatorio - Nome");
+            if (string.IsNullOrEmpty(Sobrenome))
+                AdicionarMensagem("Campo obrigatorio - Sobrenome");
         }
     }
 }
