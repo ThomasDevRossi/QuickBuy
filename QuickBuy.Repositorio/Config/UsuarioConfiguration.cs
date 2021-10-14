@@ -30,6 +30,10 @@ namespace QuickBuy.Repositorio.Config
                 .IsRequired()
                 .HasMaxLength(30);
 
+            builder
+                .HasMany(u => u.Pedidos)
+                .WithOne(p => p.Usuario);
+
             //builder.Property(u => u.Pedidos);
         }
     }
