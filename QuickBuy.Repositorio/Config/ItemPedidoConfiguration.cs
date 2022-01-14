@@ -11,7 +11,7 @@ namespace QuickBuy.Repositorio.Config
             builder
                 .HasKey(k => k.Id);
             builder
-                .Property(p => p.ProdutoId)
+                .Property(p => p.IdProduto)
                 .IsRequired();
             builder
                 .Property(p => p.Quantidade)

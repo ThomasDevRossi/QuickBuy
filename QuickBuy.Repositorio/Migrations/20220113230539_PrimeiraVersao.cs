@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace QuickBuy.Repositorio.Migrations
 {
-    public partial class PrimeiraVersaoBase : Migration
+    public partial class PrimeiraVersao : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -63,10 +63,10 @@ namespace QuickBuy.Repositorio.Migrations
                     UsuarioId = table.Column<int>(maxLength: 50, nullable: false),
                     DataPrevisaoEntrega = table.Column<DateTime>(nullable: false),
                     CEP = table.Column<string>(maxLength: 10, nullable: false),
-                    Estado = table.Column<string>(nullable: true),
+                    Estado = table.Column<string>(maxLength: 26, nullable: false),
                     Cidade = table.Column<string>(nullable: true),
-                    EnderecoCompleto = table.Column<string>(nullable: true),
-                    NumeroEndereco = table.Column<int>(nullable: false),
+                    EnderecoCompleto = table.Column<string>(maxLength: 100, nullable: false),
+                    NumeroEndereco = table.Column<int>(maxLength: 10, nullable: false),
                     FormaPagamentoId = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
@@ -92,7 +92,7 @@ namespace QuickBuy.Repositorio.Migrations
                 {
                     Id = table.Column<int>(nullable: false)
                         .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
-                    ProdutoId = table.Column<int>(nullable: false),
+                    IdProduto = table.Column<int>(nullable: false),
                     Quantidade = table.Column<int>(nullable: false),
                     PedidoId = table.Column<int>(nullable: true)
                 },

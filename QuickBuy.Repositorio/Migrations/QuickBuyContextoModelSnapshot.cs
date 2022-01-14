@@ -22,9 +22,9 @@ namespace QuickBuy.Repositorio.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<int?>("PedidoId");
+                    b.Property<int>("IdProduto");
 
-                    b.Property<int>("ProdutoId");
+                    b.Property<int?>("PedidoId");
 
                     b.Property<int>("Quantidade");
 
@@ -50,13 +50,18 @@ namespace QuickBuy.Repositorio.Migrations
 
                     b.Property<DateTime>("DataPrevisaoEntrega");
 
-                    b.Property<string>("EnderecoCompleto");
+                    b.Property<string>("EnderecoCompleto")
+                        .IsRequired()
+                        .HasMaxLength(100);
 
-                    b.Property<string>("Estado");
+                    b.Property<string>("Estado")
+                        .IsRequired()
+                        .HasMaxLength(26);
 
                     b.Property<int>("FormaPagamentoId");
 
-                    b.Property<int>("NumeroEndereco");
+                    b.Property<int>("NumeroEndereco")
+                        .HasMaxLength(10);
 
                     b.Property<int>("UsuarioId")
                         .HasMaxLength(50);
