@@ -33,8 +33,6 @@ namespace QuickBuy.Repositorio.Config
             builder
                 .HasMany(u => u.Pedidos)
                 .WithOne(p => p.Usuario);
-
-            //builder.Property(u => u.Pedidos);
         }
     }
 }
