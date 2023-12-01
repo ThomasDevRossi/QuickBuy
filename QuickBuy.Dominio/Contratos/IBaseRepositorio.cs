@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace QuickBuy.Repositorio
 {
@@ -8,7 +9,7 @@ namespace QuickBuy.Repositorio
         void Atualizar(TEntity entity);
         void Remover(TEntity entity);
         TEntity ObterPorId(int id);
-        IEquatable<TEntity> ObterTodos();
+        IEnumerable<TEntity> ObterTodos();
 
     }
 }

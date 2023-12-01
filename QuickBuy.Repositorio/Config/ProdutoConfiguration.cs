@@ -10,7 +10,7 @@ namespace QuickBuy.Repositorio.Config
         public void Configure(EntityTypeBuilder<Produto> builder)
         {
             builder
-                .HasKey(k => k.Id);
+                .HasKey(p => p.Id);
 
             builder
                 .Property(p => p.Descricao)
