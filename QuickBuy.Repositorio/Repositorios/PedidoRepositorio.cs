@@ -8,6 +8,7 @@ namespace QuickBuy.Repositorio.Repositorios
     {
         public PedidoRepositorio(QuickBuyContexto quickBuyContexto) : base(quickBuyContexto)
         {
+            //test commit
         }
     }
 }
